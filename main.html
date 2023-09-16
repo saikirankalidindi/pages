@@ -95,6 +95,33 @@
       opacity: 0.3;
     }
   </style>
+<style>
+  .dizme_tm_about {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dizme_tm_about::before {
+    content: "";
+    position: absolute;
+    top: 68%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 540px; /* Adjust the size of the circle */
+    height: 500px; /* Adjust the size of the circle */
+    background-color: rgba(139, 139, 139, 0.5); /* Background color and opacity */
+    border-radius: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .dizme_tm_about:hover::before {
+    opacity: 1;
+  }
+</style>
+
+  
   
   </head>
   <body class="dark opened loading" style="background-color: black;">
