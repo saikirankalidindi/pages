@@ -150,15 +150,23 @@
         font-size: 1.2em; /* Change the font size to your desired value */
     }
 
-    body.dark {
-            background: radial-gradient(#20072b, #000000);
-            transition: background 0.5s;
-        }
+  body.dark {
+     background: radial-gradient(#20072b, #000000);
+     transition: background 0.5s;
+    }
 
-        body.dark.mouse-move-active {
-            background: radial-gradient(#20072b, #000000);
-        }
+  body.dark.mouse-move-active {
+      background: radial-gradient(#20072b, #000000);
+    }
 
+  .pill {
+    width: 20px;
+    height: 60px;
+    background-color: #ff1a1a;
+    position: absolute;
+    top: 0;
+    left:99.5%;
+}
   .home-text {
     font-size: 20px;
     font-weight: bold;
@@ -227,13 +235,24 @@
 
 
 .vertical-line {
-    border-left: 0.1vw solid rgb(255, 255, 255);
+    border-left: 0.1vw solid rgb(39, 39, 39);
     height: 1150vh;
     position: absolute;
-    left: 98%;
+    left: 99.5%;
     top: 0;
     transform: translateX(-50%);
 }
+
+body {
+    overflow: auto;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer/Edge */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
 </style>
 
   
@@ -241,6 +260,7 @@
   </head>
   <body class="dark">
     <div class="vertical-line"></div>
+    <div class="pill"></div>
     <div id="myModal" class="modal fade">
       <div class="modal-dialog modal-confirm">
         <div class="modal-content">
@@ -2438,6 +2458,24 @@ goTopButton.addEventListener("click", () => {
                 document.body.classList.remove('mouse-move-active');
             });
         });
+    document.addEventListener('DOMContentLoaded', function() {
+    const pill = document.querySelector('.pill');
+    const line = document.querySelector('.vertical-line');
+    const lineTop = line.offsetTop;
+    const lineBottom = lineTop + line.clientHeight;
+    const lineHeight = line.clientHeight;
+
+    function updatePillPosition() {
+        const scrollPercentage = (window.scrollY - lineTop+100) / (lineBottom - lineTop);
+        const pillPosition = Math.min(Math.max(0, scrollPercentage), 1) * (lineHeight - pill.clientHeight);
+        pill.style.top = `${pillPosition}px`;
+    }
+
+    window.addEventListener('scroll', updatePillPosition);
+    window.addEventListener('resize', updatePillPosition);
+
+    updatePillPosition();
+});
 </script>
 <script type="text/javascript">
   options = {
