@@ -88,7 +88,7 @@
       font-size: 600px;
       font-weight: bold;
       position: absolute;
-      top: 450%;
+      top: 500%;
       left: 15%;
       transform: translate(-50%, -50%) rotate(90deg); /* Rotate by 90 degrees */
       z-index: -1;
@@ -96,7 +96,7 @@
     }
   </style>
 <style>
-  .dizme_tm_about {
+  .dizme_tm_about{
     position: relative;
     overflow: hidden;
   }
@@ -104,12 +104,13 @@
   .dizme_tm_about::before {
     content: "";
     position: absolute;
-    top: 68%;
+    top: 75%;
     left: 70%;
     transform: translate(-50%, -50%);
-    width: 540px; /* Adjust the size of the circle */
-    height: 500px; /* Adjust the size of the circle */
-    background-color: rgba(139, 139, 139, 0.5); /* Background color and opacity */
+    width: 530px; /* Adjust the size of the circle */
+    height: 530px; /* Adjust the size of the circle */
+    background: radial-gradient(#20072b, #5823ad); 
+ /* Background color and opacity */
     border-radius: 100%;
     z-index: -1;
     opacity: 0;
@@ -119,12 +120,42 @@
   .dizme_tm_about:hover::before {
     opacity: 1;
   }
+
+  .dizme_tm_skills{
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dizme_tm_skills::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 500px; /* Adjust the size of the circle */
+    height: 500px; /* Adjust the size of the circle */
+    background: radial-gradient(#20072b, #5823ad); 
+ /* Background color and opacity */
+    border-radius: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .dizme_tm_skills:hover::before {
+    opacity: 1;
+  }
+
+  a:hover {
+        font-size: 1.2em; /* Change the font size to your desired value */
+    }
 </style>
 
   
   
   </head>
-  <body class="dark opened loading" style="background-color: black;">
+  <body class="dark opened loading" style="  background: radial-gradient(#20072b, #000000); 
+  ">
     <div id="myModal" class="modal fade">
       <div class="modal-dialog modal-confirm">
         <div class="modal-content">
@@ -196,7 +227,7 @@
                   >
                 </li>
                 <li class="download_cv">
-                  <a href="resume.pdf" download="resume.pdf" target="_blank" class="no-cursor"
+                  <a href="resume.pdf" download="resume.pdf" target="_blank"
                     ><span>Download CV</span></a
                   >
                 </li>
@@ -241,7 +272,7 @@
                     >
                   </li>
                   <li class="download_cv">
-                    <a href="resume.pdf" download="saikirankalidindi.pdf" target="blank" class="no-cursor"
+                    <a href="resume.pdf" download="saikirankalidindi.pdf" target="blank" 
                       ><span>Download CV</span></a
                     >
                   </li>
@@ -266,14 +297,14 @@
                   </div>
                   <div class="text">
                     <p>
-                      I'm creative designer based in Hyderabad, and I'm very
+                      I'm creative designer & developer based in Hyderabad, and I'm very
                       passionate and dedicated to my work.
                     </p>
                   </div>
                   <div class="button">
                     <div class="dizme_tm_button">
                       <a
-                        class="anchor no-cursor" 
+                        class="anchor" 
                         href="#about"
                         ><span>About Me</span></a
                       >
@@ -406,7 +437,7 @@
                 class="anchor"
                 href="#process"
                 ><svg
-                  class="no-cursor"
+                  class="magic-hover magic-hover__square"
                   width="26px"
                   height="100%"
                   viewBox="0 0 247 390"
@@ -644,7 +675,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="right">
+                <div class="right" style="backdrop-filter: blur(1cm);">
                   <div
                     class="title wow fadeInUp"
                     data-wow-duration="1s"
@@ -2291,7 +2322,7 @@
     </div>
     </div>
     <div class="background-text">
-      SAIKIRANKALIDINDI
+      SAIKIRANKALIDINDIWEBSITE
     </div>
   
     </div>
@@ -2356,8 +2387,8 @@ goTopButton.addEventListener("click", () => {
 </script>
 <script type="text/javascript">
   options = {
-"cursorOuter": "circle-basic",
-"hoverEffect": "circle-move",
+"cursorOuter": "diamond",
+"hoverEffect": "pointer-overlay",
 "hoverItemMove": true,
 "defaultCursor": false,
 "outerWidth": 30,
