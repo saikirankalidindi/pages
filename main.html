@@ -159,91 +159,34 @@
       background: radial-gradient(#20072b, #000000);
     }
 
-  .pill {
+    .pill {
     width: 20px;
-    height: 60px;
-    background-color: #ff1a1a;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
     position: absolute;
     top: 0;
-    left:99.5%;
-    border: 2px solid #ffffff00;
-    padding: 10px 20px; /* Add padding for spacing inside the button */
-    border-radius: 5px; /* Add rounded corners for button appearance */
-    cursor: pointer; /* Add pointer cursor for better interaction */
-    transition: background-color 0.3s, color 0.3s; 
+    left: 98%;
+    box-sizing: border-box;
 }
-  /* .home-text {
-    font-size: 20px;
-    font-weight: bold;
+
+.inner-circle {
+    width: 2px;
+    height: 5px;
+    background-color: #ffffff;
+    border-radius: 50%;
     position: absolute;
-    color: #ff3030;
-    top: 40%;
-    left: 99.5%;
-    transform: translate(-50%, -50%) rotate(90deg);
-    z-index: -1;
-  }
-
-  .about-text {
-    font-size: 20px;
-    font-weight: bold;
-    position: absolute;
-    color: #ff1a1a;
-    top: 250%;
-    left: 98%;
-    transform: translate(-50%, -50%)rotate(90deg);
-    z-index: -1;
-  }
-
-  .portfolio-text {
-    font-size: 20px;
-    font-weight: bold;
-    position: absolute;
-    color: #ff1a1a;
-    top: 385%;
-    left: 98%;
-    transform: translate(-50%, -50%)rotate(90deg);
-    z-index: -1;
-  }
-
-  .skills-text {
-    font-size: 20px;
-    font-weight: bold;
-    position: absolute;
-    color: #ff1a1a;
-    top: 515%;
-    left: 98%;
-    transform: translate(-50%, -50%)rotate(90deg);
-    z-index: -1;
-  }
-
-  .services-text {
-    font-size: 20px;
-    font-weight: bold;
-    position: absolute;
-    color: #ff1a1a;
-    top: 620%;
-    left: 98%;
-    transform: translate(-50%, -50%)rotate(90deg);
-    z-index: -1;
-  }
-
-  .blog-text {
-    font-size: 20px;
-    font-weight: bold;
-    position: absolute;
-    color: #ffffff;
-    top: 885%;
-    left: 98%;
-    transform: translate(-50%, -50%)rotate(90deg);
-    z-index: -1;
-  } */
-
-
-/* .vertical-line {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+ 
+.vertical-line {
     border-left: 0.1vw solid rgb(39, 39, 39);
     height: 1150vh;
     position: absolute;
-    left: 99.5%;
+    left: 98.7%;
     top: 0;
     transform: translateX(-50%);
 }
@@ -256,7 +199,7 @@ body {
 
 body::-webkit-scrollbar {
     display: none; 
-} */
+}
 
 </style>
 <!-- <script type="text/javascript">
@@ -269,7 +212,9 @@ body::-webkit-scrollbar {
   </head>
   <body class="dark">
     <div class="vertical-line"></div>
-    <div class="pill"></div>
+    <div class="pill">
+      <div class="inner-circle"></div>
+  </div>  
     <div id="myModal" class="modal fade">
       <div class="modal-dialog modal-confirm">
         <div class="modal-content">
