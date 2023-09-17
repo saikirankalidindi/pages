@@ -88,7 +88,7 @@
       font-size: 600px;
       font-weight: bold;
       position: absolute;
-      top: 500%;
+      top: 565%;
       left: 15%;
       transform: translate(-50%, -50%) rotate(90deg); /* Rotate by 90 degrees */
       z-index: -1;
@@ -149,13 +149,21 @@
   a:hover {
         font-size: 1.2em; /* Change the font size to your desired value */
     }
+
+    body.dark {
+            background: radial-gradient(#20072b, #000000);
+            transition: background 0.5s;
+        }
+
+        body.dark.mouse-move-active {
+            background: radial-gradient(#20072b, #000000);
+        }
 </style>
 
   
   
   </head>
-  <body class="dark opened loading" style="  background: radial-gradient(#20072b, #000000); 
-  ">
+  <body class="dark">
     <div id="myModal" class="modal fade">
       <div class="modal-dialog modal-confirm">
         <div class="modal-content">
@@ -2178,7 +2186,7 @@
                         </div>
                         <div class="short">
                           <h3>Address</h3>
-                          <span>20, Somewhere in world</span>
+                          <span>Hyderabad,India</span>
                         </div>
                       </div>
                     </li>
@@ -2190,8 +2198,8 @@
                         <div class="short">
                           <h3>Email</h3>
                           <span
-                            ><a href="#"
-                              >hello@dizme.com</a
+                            ><a href="mailto:kalidindisaikiran09@gmail.com"
+                              >iamsaikiran@gmail.com</a
                             ></span
                           >
                         </div>
@@ -2204,7 +2212,7 @@
                         </div>
                         <div class="short">
                           <h3>Phone</h3>
-                          <span>+123 456 7890</span>
+                          <span>+16562183833</span>
                         </div>
                       </div>
                     </li>
@@ -2322,7 +2330,7 @@
     </div>
     </div>
     <div class="background-text">
-      SAIKIRANKALIDINDIWEBSITE
+      SAIKIRANKALIDINDIWEBS
     </div>
   
     </div>
@@ -2384,6 +2392,15 @@ goTopButton.addEventListener("click", () => {
             window.location.href = "index.html";
         }
     }
+    document.addEventListener('DOMContentLoaded', function () {
+            document.addEventListener('mousemove', function () {
+                document.body.classList.add('mouse-move-active');
+            });
+
+            document.addEventListener('mouseout', function () {
+                document.body.classList.remove('mouse-move-active');
+            });
+        });
 </script>
 <script type="text/javascript">
   options = {
