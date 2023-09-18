@@ -10,7 +10,7 @@ typewriter.typeString('Web Developer')
     .typeString('Data Scientist')
     .pauseFor(2500)
     .deleteAll()
-    .typeString('Python Developer')
+    .typeString('Python Dev')
     .pauseFor(2500)
     .start();
   

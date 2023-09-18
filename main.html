@@ -201,6 +201,23 @@ body::-webkit-scrollbar {
       transform: translateX(-50%);
     }
   }
+
+ 
+
+.brush_2:hover {
+  animation: zoomIn 1s;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+
 </style>
   </head>
   <body class="dark" style="background: radial-gradient(#20072b, #000000);">
@@ -1128,7 +1145,7 @@ body::-webkit-scrollbar {
                       data-color="rgb(247, 80, 35)"
                     >
                       <span
-                        ><span class="label">illustrator</span
+                        ><span class="label">Data Science</span
                         ><span class="number" style="right: 120%"
                           >85%</span
                         ></span
@@ -1151,7 +1168,7 @@ body::-webkit-scrollbar {
                       data-color="rgb(28, 190, 89)"
                     >
                       <span
-                        ><span class="label">photoshop </span
+                        ><span class="label">Backend Development</span
                         ><span class="number" style="right: 120%"
                           >95%</span
                         ></span
@@ -1174,7 +1191,7 @@ body::-webkit-scrollbar {
                       data-color="rgb(128, 103, 240)"
                     >
                       <span
-                        ><span class="label">figma </span
+                        ><span class="label">Frontend Development</span
                         ><span class="number" style="right: 120%"
                           >75%</span
                         ></span
@@ -2185,9 +2202,6 @@ body::-webkit-scrollbar {
                   <ul>
                     <li>
                       <div class="list_inner">
-                        <div class="icon orangeBackground">
-                          <i class="icon-location orangeText"></i>
-                        </div>
                         <div class="short">
                           <h3>Address</h3>
                           <span>Hyderabad,India</span>
@@ -2196,9 +2210,6 @@ body::-webkit-scrollbar {
                     </li>
                     <li>
                       <div class="list_inner">
-                        <div class="icon greenBackground">
-                          <i class="icon-mail-1 greenText"></i>
-                        </div>
                         <div class="short">
                           <h3>Email</h3>
                           <span
@@ -2211,9 +2222,6 @@ body::-webkit-scrollbar {
                     </li>
                     <li>
                       <div class="list_inner">
-                        <div class="icon purpleBackground">
-                          <i class="icon-phone purpleText"></i>
-                        </div>
                         <div class="short">
                           <h3>Phone</h3>
                           <span>+16562183833</span>
@@ -2423,6 +2431,51 @@ goTopButton.addEventListener("click", () => {
 
     updatePillPosition();
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const cursor = document.querySelector('.gradcur');
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
+    let requestId;
+
+    function updateCursorPosition() {
+        const dx = mouseX - cursorX;
+        const dy = mouseY - cursorY;
+        cursorX += dx / 10;
+        cursorY += dy / 10;
+
+        cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+        requestId = requestAnimationFrame(updateCursorPosition);
+    }
+
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cancelAnimationFrame(requestId);
+        updateCursorPosition();
+        cursor.style.opacity = 1;
+    });
+
+    document.addEventListener('mouseout', function() {
+        cursor.style.opacity = 0;
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+  const progressBars = document.querySelectorAll('.dodo_progress .progress_inner');
+
+  function playAnimation() {
+    progressBars.forEach(bar => {
+      bar.querySelector('.background .bar').classList.add('open');
+      bar.querySelector('.label').classList.add('opened');
+    });
+  }
+
+  playAnimation(); // Trigger the animation when the div appears
+});
+
+
 </script>
 <script type="text/javascript">
   options = {
@@ -2434,6 +2487,7 @@ goTopButton.addEventListener("click", () => {
 "outerHeight": 30
     };
   magicMouse(options);
+
 </script>
 <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 <script src="main.js"></script>
